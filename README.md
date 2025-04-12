@@ -1,4 +1,4 @@
-# 👁 Diabetic Retinopathy Classification and Segmentation
+# Diabetic Retinopathy Classification and Segmentation
 
 This project aims to create a web-based application for diabetic retinopathy detection and segmentation, leveraging deep learning models to classify the severity of diabetic retinopathy and segment specific features such as Microaneurysms, Hemorrhages, and Hard Exudates, facilitating early diagnosis and better treatment planning.
 
