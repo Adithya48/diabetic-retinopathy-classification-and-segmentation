@@ -138,3 +138,11 @@ batch_size = 16
 epochs = 50
 ```
 
+## Output Visualization  
+Each testing script generates visual outputs of the segmentation, including:  
+- Input images.  
+- Predicted segmented masks for the selected feature.  
+
+The results are stored in the `results/` directory and can be used for analysis or presentation.  
+
+---
