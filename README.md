@@ -54,4 +54,48 @@ templates/
    http://127.0.0.1:5000  
    ```  
 
+## Usage  
+1. Upload a fundus image.  
+2. Select a mode:  
+   - **Classification:** Predicts DR severity.  
+   - **Segmentation:** Choose MA, HE, or EX for segmentation.  
+3. Click **Submit** to view results.  
+
+---  
+**Note:** Ensure models are in the `models/` directory.
+
+## Required Packages  
+Make sure the following Python packages are installed:  
+- Python (>= 3.8)  
+- TensorFlow (>= 2.6)  
+- NumPy  
+- OpenCV  
+- Matplotlib  
+- Pillow  
+- Scikit-learn  
+
+Install these packages using pip:  
+```bash  
+pip install tensorflow numpy opencv-python matplotlib pillow scikit-learn  
+```  
+
+---
+
+## Dataset Structure for Segmentation
+
+This project uses the **Indian Diabetic Retinopathy Image Dataset (IDRiD)** for both classification and segmentation tasks.
+
+🔗 [Access the IDRiD dataset here](http://ieee-dataport.org/open-access/indian-diabetic-retinopathy-image-dataset-idrid)
+Ensure the datasets for training and testing are organized as follows:  
+```  
+new_data/  
+├── train/  
+│   ├── image/        # Contains training images (e.g., .jpg format)  
+│   └── mask/         # Contains corresponding masks (e.g., .tif format)  
+└── test/  
+    ├── image/        # Contains testing images  
+    └── mask/         # Contains testing masks  
+```  
+
+Each feature (hemorrhages, microaneurysms, hard exudates) uses separate training and testing datasets. Ensure the correct dataset is loaded for each feature.  
 
