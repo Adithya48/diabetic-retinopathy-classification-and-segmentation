@@ -83,7 +83,7 @@ pip install tensorflow numpy opencv-python matplotlib pillow scikit-learn
 
 ## Dataset Structure for Segmentation
 
-This project uses the **Indian Diabetic Retinopathy Image Dataset (IDRiD)** for both classification and segmentation tasks.
+Segmentation uses the **Indian Diabetic Retinopathy Image Dataset (IDRiD)**.
 
 🔗 [Access the IDRiD dataset here](http://ieee-dataport.org/open-access/indian-diabetic-retinopathy-image-dataset-idrid)
 Ensure the datasets for training and testing are organized as follows:  
@@ -97,5 +97,44 @@ new_data/
     └── mask/         # Contains testing masks  
 ```  
 
-Each feature (hemorrhages, microaneurysms, hard exudates) uses separate training and testing datasets. Ensure the correct dataset is loaded for each feature.  
+Each feature (hemorrhages, microaneurysms, hard exudates) uses separate training and testing datasets. Ensure the correct dataset is loaded for each feature. 
+
+
+---
+## Dataset Structure for Classification
+
+Classification uses the **APTOS 2019 Blindness Detection Dataset** .
+
+🔗 [Access the APTOS dataset here](https://www.kaggle.com/competitions/aptos2019-blindness-detection/data)
+
+Organize the dataset as follows:
+```python
+dataset/  
+├── train/  
+│   ├── 0/            # Contains training images for No DR  
+│   ├── 1/            # Contains training images for Mild DR  
+│   ├── 2/            # Contains training images for Moderate DR  
+│   ├── 3/            # Contains training images for Severe DR  
+│   └── 4/            # Contains training images for Proliferative DR  
+└── val/ 
+```
+Ensure the images are preprocessed and labeled correctly.
+
+---
+
+## Configure Training Parameters
+1. Open the classification script train_classifier.py.
+2. Update the dataset paths:
+
+```python
+train_dir = "/path_to_dataset/train"
+val_dir = "/path_to_dataset/val"
+```
+
+3. Adjust hyperparameters (e.g., learning rate, batch size, epochs) as needed
+
+```python
+batch_size = 16
+epochs = 50
+```
 
